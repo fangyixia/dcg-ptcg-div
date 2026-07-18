@@ -139,10 +139,10 @@ a:hover {
 }
 
 .control-group label {
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   font-weight: 600;
-  color: var(--text-secondary);
-  letter-spacing: 0.04em;
+  color: var(--text);
+  letter-spacing: 0.02em;
 }
 
 select {
@@ -213,11 +213,10 @@ select optgroup {
 .schedule-head {
   padding: 1rem 0;
   border-bottom: 1px solid var(--line-strong);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
+  font-size: 0.9375rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
 }
 
 .schedule {
