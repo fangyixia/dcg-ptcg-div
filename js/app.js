@@ -3,11 +3,13 @@ const REGION_FILTER = document.getElementById("filter-region");
 const EVENT_LIST = document.getElementById("event-list");
 const META = document.getElementById("meta");
 const STATUS = document.getElementById("status");
+const STAT_COUNT = document.getElementById("stat-count");
+const STAT_UPDATED = document.getElementById("stat-updated");
 
 let allEvents = [];
 
 function formatUpdatedAt(isoString) {
-  if (!isoString) return "";
+  if (!isoString) return "—";
   const date = new Date(isoString);
   if (Number.isNaN(date.getTime())) return isoString;
   return date.toLocaleString("zh-TW", {
@@ -16,12 +18,11 @@ function formatUpdatedAt(isoString) {
     day: "numeric",
     hour: "2-digit",
     minute: "2-digit",
-    timeZoneName: "short",
   });
 }
 
 function populateFilter(select, values) {
-  const sorted = [...values].sort((a, b) => a.localeCompare(b, "en"));
+  const sorted = [...values].sort((a, b) => a.localeCompare(b, "zh-Hant"));
   for (const value of sorted) {
     const option = document.createElement("option");
     option.value = value;
@@ -34,33 +35,35 @@ function renderEvents(events) {
   EVENT_LIST.innerHTML = "";
 
   if (events.length === 0) {
-    EVENT_LIST.innerHTML =
-      '<li class="status">沒有符合篩選條件的賽事。</li>';
+    EVENT_LIST.innerHTML = '<li class="empty-state">沒有符合篩選條件的賽事。</li>';
     return;
   }
 
   for (const event of events) {
     const item = document.createElement("li");
-    item.className = "event-card";
+    item.className = "schedule-item";
 
-    const title = event.url
-      ? `<a href="${event.url}" target="_blank" rel="noopener noreferrer">${escapeHtml(event.name)}</a>`
+    const titleHtml = event.url
+      ? `<a href="${escapeHtml(event.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(event.name)}</a>`
       : escapeHtml(event.name);
 
-    const badges = [
-      event.region ? `<span class="badge">${escapeHtml(event.region)}</span>` : "",
-      event.streaming ? '<span class="badge badge--live">直播</span>' : "",
-    ]
-      .filter(Boolean)
-      .join("");
+    const liveTag = event.streaming ? '<span class="tag-live">直播</span>' : "";
+    const detailLink = event.url
+      ? `<a class="event-link" href="${escapeHtml(event.url)}" target="_blank" rel="noopener noreferrer">官方詳情</a>`
+      : "";
 
     item.innerHTML = `
-      <h2>${title}</h2>
       <p class="event-date">${escapeHtml(event.date)}</p>
+      <div class="event-main">
+        <h2 class="event-title">${titleHtml}${liveTag}</h2>
+        <div class="event-sub">
+          ${detailLink}
+        </div>
+      </div>
       <p class="event-type">${escapeHtml(event.type)}</p>
-      <div class="event-meta">
-        ${event.location ? `<span>${escapeHtml(event.location)}</span>` : ""}
-        ${badges}
+      <div>
+        <p class="event-location">${event.location ? escapeHtml(event.location) : "—"}</p>
+        ${event.region ? `<span class="event-region">${escapeHtml(event.region)}</span>` : ""}
       </div>
     `;
 
@@ -88,7 +91,7 @@ function applyFilters() {
   });
 
   renderEvents(filtered);
-  META.textContent = `共 ${filtered.length} / ${allEvents.length} 場賽事`;
+  META.textContent = `顯示 ${filtered.length} / ${allEvents.length} 場`;
 }
 
 async function loadEvents() {
@@ -101,6 +104,9 @@ async function loadEvents() {
     const payload = await response.json();
     allEvents = payload.events || [];
 
+    STAT_COUNT.textContent = String(allEvents.length);
+    STAT_UPDATED.textContent = formatUpdatedAt(payload.updatedAt);
+
     populateFilter(TYPE_FILTER, new Set(allEvents.map((event) => event.type)));
     populateFilter(
       REGION_FILTER,
@@ -111,14 +117,13 @@ async function loadEvents() {
     REGION_FILTER.addEventListener("change", applyFilters);
 
     applyFilters();
-
-    const updated = formatUpdatedAt(payload.updatedAt);
-    META.textContent += updated ? ` · 更新：${updated}` : "";
   } catch (error) {
     STATUS.hidden = false;
     STATUS.textContent =
-      "無法載入賽事資料。若為首次部署，請先執行 scripts/fetch_events.py 或等待 GitHub Actions 更新。";
+      "無法載入賽事資料。若為首次部署，請先執行 scripts/fetch_events.py，或等待 GitHub Actions 更新。";
     META.textContent = "載入失敗";
+    STAT_COUNT.textContent = "—";
+    STAT_UPDATED.textContent = "—";
     console.error(error);
   }
 }

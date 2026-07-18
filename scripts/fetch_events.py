@@ -15,19 +15,43 @@ SOURCE_URL = "https://championships.pokemon.com/en-us/events?status=upcoming"
 BASE_URL = "https://championships.pokemon.com"
 
 TYPE_LABELS = {
-    "world": "World Championships",
-    "regional": "Regional & Special Championships",
-    "international": "International Championships",
-    "online": "Online Tournaments",
+    "world": "世界錦標賽",
+    "regional": "區域／特別錦標賽",
+    "international": "國際錦標賽",
+    "online": "線上賽事",
 }
 
 REGION_LABELS = {
-    "northamerica": "North America",
-    "oceania": "Oceania",
-    "europe": "Europe",
-    "latinamerica": "Latin America",
-    "virtual": "Virtual",
-    "mea": "Middle East & South Africa",
+    "northamerica": "北美",
+    "oceania": "大洋洲",
+    "europe": "歐洲",
+    "latinamerica": "拉丁美洲",
+    "virtual": "線上",
+    "mea": "中東與非洲",
+}
+
+NAME_REPLACEMENTS = [
+    ("Pokémon World Championships", "寶可夢世界錦標賽"),
+    ("Pokémon North America International Championships", "寶可夢北美國際錦標賽"),
+    ("Pokémon Europe International Championships", "寶可夢歐洲國際錦標賽"),
+    ("Pokémon Latin America International Championships", "寶可夢拉丁美洲國際錦標賽"),
+    ("Pokémon Special Championships", "寶可夢特別錦標賽"),
+    ("Pokémon Regional Championships", "寶可夢區域錦標賽"),
+]
+
+MONTH_MAP = {
+    "Jan.": "1 月",
+    "Feb.": "2 月",
+    "Mar.": "3 月",
+    "Apr.": "4 月",
+    "May": "5 月",
+    "June": "6 月",
+    "July": "7 月",
+    "Aug.": "8 月",
+    "Sept.": "9 月",
+    "Oct.": "10 月",
+    "Nov.": "11 月",
+    "Dec.": "12 月",
 }
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -40,6 +64,25 @@ def normalize_url(url: str) -> str:
     if url.startswith("http"):
         return url
     return f"{BASE_URL}{url}"
+
+
+def translate_event_name(name: str) -> str:
+    result = name
+    for english, chinese in NAME_REPLACEMENTS:
+        result = result.replace(english, chinese)
+    return result
+
+
+def translate_date_range(date_range: str) -> str:
+    if not date_range:
+        return date_range
+
+    result = date_range
+    for english, chinese in MONTH_MAP.items():
+        result = result.replace(english, chinese)
+
+    result = result.replace(" – ", "－").replace(" - ", "－").replace("–", "－")
+    return result
 
 
 def fetch_raw_events() -> dict:
@@ -56,10 +99,13 @@ def transform_events(raw: dict) -> list[dict]:
     for item in raw.get("items", []):
         type_key = item.get("type_s", "")
         region_key = item.get("region_s", "")
+        english_name = item.get("eventName_s", "")
         events.append(
             {
-                "name": item.get("eventName_s", ""),
-                "date": item.get("displayDateRange_s", ""),
+                "name": translate_event_name(english_name),
+                "nameEn": english_name,
+                "date": translate_date_range(item.get("displayDateRange_s", "")),
+                "dateEn": item.get("displayDateRange_s", ""),
                 "type": TYPE_LABELS.get(type_key, type_key),
                 "typeKey": type_key,
                 "location": item.get("eventLocation_s", ""),
