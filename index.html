@@ -3,60 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pokémon 錦標賽 Upcoming 賽程</title>
+    <meta name="color-scheme" content="dark" />
+    <title>寶可夢錦標賽｜即將舉行賽程</title>
     <meta
       name="description"
-      content="Pokémon Championship Series 即將舉行的官方賽事一覽，資料來自 championships.pokemon.com"
+      content="寶可夢 Championship Series 即將舉行的官方賽事一覽，含賽事連結、日期與舉辦地點。"
     />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="container">
-        <p class="eyebrow">Pokémon Championship Series</p>
-        <h1>Upcoming 賽程</h1>
-        <p class="subtitle">
-          資料來自
-          <a
-            href="https://championships.pokemon.com/en-us/events?status=upcoming"
-            target="_blank"
-            rel="noopener noreferrer"
-            >官方賽事頁面</a
-          >
-        </p>
-      </div>
-    </header>
-
-    <main class="container">
-      <section class="toolbar" aria-label="篩選與狀態">
-        <div class="filters">
-          <label>
-            賽事類型
-            <select id="filter-type">
-              <option value="">全部</option>
-            </select>
-          </label>
-          <label>
-            地區
-            <select id="filter-region">
-              <option value="">全部</option>
-            </select>
-          </label>
+    <div class="layout">
+      <header class="site-header">
+        <div class="container header-inner">
+          <div class="header-copy">
+            <p class="kicker">Play! Pokémon · Championship Series</p>
+            <h1>即將舉行賽程</h1>
+            <p class="lede">
+              整理自
+              <a
+                href="https://championships.pokemon.com/en-us/events?status=upcoming"
+                target="_blank"
+                rel="noopener noreferrer"
+                >官方賽事頁面</a
+              >，含每場賽事的詳情連結與舉辦地點。
+            </p>
+          </div>
+          <dl class="header-stats" aria-label="資料摘要">
+            <div>
+              <dt>賽事數</dt>
+              <dd id="stat-count">—</dd>
+            </div>
+            <div>
+              <dt>資料更新</dt>
+              <dd id="stat-updated">—</dd>
+            </div>
+          </dl>
         </div>
-        <p id="meta" class="meta">載入中…</p>
-      </section>
+      </header>
 
-      <section id="status" class="status" hidden></section>
-      <ul id="event-list" class="event-list" aria-live="polite"></ul>
-    </main>
+      <main class="container">
+        <section class="controls" aria-label="篩選">
+          <div class="control-group">
+            <label for="filter-type">賽事類型</label>
+            <select id="filter-type">
+              <option value="">全部類型</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="filter-region">地區</label>
+            <select id="filter-region">
+              <option value="">全部地區</option>
+            </select>
+          </div>
+          <p id="meta" class="result-meta">載入中…</p>
+        </section>
 
-    <footer class="site-footer">
-      <div class="container">
-        <p>
-          非官方整理頁面 · 資料版权归 The Pokémon Company International 所有
-        </p>
-      </div>
-    </footer>
+        <section id="status" class="notice" hidden></section>
+
+        <section class="schedule-wrap" aria-label="賽事列表">
+          <div class="schedule-head" aria-hidden="true">
+            <span>日期</span>
+            <span>賽事</span>
+            <span>類型</span>
+            <span>地點</span>
+          </div>
+          <ol id="event-list" class="schedule" aria-live="polite"></ol>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <p>非官方整理頁面。賽事資訊以 The Pokémon Company International 公告為準。</p>
+        </div>
+      </footer>
+    </div>
 
     <script src="js/app.js"></script>
   </body>
