@@ -32,13 +32,19 @@ python -m http.server 8080
 
 1. 將此 repo push 到 GitHub（例如 `dcg-ptcg-div`）。
 2. 到 repo **Settings → Pages**：
-   - **Source** 選 `GitHub Actions`
-3. push 到 `main`（或 `master`）後，`.github/workflows/deploy.yml` 會：
+   - **Build and deployment → Source** 選 **Deploy from a branch**
+   - **Branch** 選 `gh-pages`，資料夾選 **`/ (root)`**
+3. push 到 `main` 後，workflow 會：
    - 執行 `fetch_events.py` 更新 `data/events.json`
-   - 部署靜態頁面到 GitHub Pages
-4. 網址會是：`https://<username>.github.io/<repo>/`
+   - 將靜態檔推送到 `gh-pages` 分支
+4. 等 1～2 分鐘後，網址為：`https://<username>.github.io/<repo>/`
 
 若 repo 名稱為 `<username>.github.io`，則根網址為 `https://<username>.github.io/`。
+
+### 若 deploy 出現 404
+
+舊版 workflow 使用 **GitHub Actions** 作為 Pages 來源，若 Settings 未啟用會失敗。  
+目前已改為推送 **`gh-pages` 分支**，請確認 Pages 來源設為 **`gh-pages` / root**，不是 `GitHub Actions`。
 
 ## 自動更新
 
