@@ -1,0 +1,10 @@
+# 本地暫存
+page-sample.html
+events.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+_site/

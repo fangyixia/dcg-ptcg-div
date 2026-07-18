@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon 錦標賽 Upcoming 賽程</title>
+    <meta
+      name="description"
+      content="Pokémon Championship Series 即將舉行的官方賽事一覽，資料來自 championships.pokemon.com"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <p class="eyebrow">Pokémon Championship Series</p>
+        <h1>Upcoming 賽程</h1>
+        <p class="subtitle">
+          資料來自
+          <a
+            href="https://championships.pokemon.com/en-us/events?status=upcoming"
+            target="_blank"
+            rel="noopener noreferrer"
+            >官方賽事頁面</a
+          >
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="toolbar" aria-label="篩選與狀態">
+        <div class="filters">
+          <label>
+            賽事類型
+            <select id="filter-type">
+              <option value="">全部</option>
+            </select>
+          </label>
+          <label>
+            地區
+            <select id="filter-region">
+              <option value="">全部</option>
+            </select>
+          </label>
+        </div>
+        <p id="meta" class="meta">載入中…</p>
+      </section>
+
+      <section id="status" class="status" hidden></section>
+      <ul id="event-list" class="event-list" aria-live="polite"></ul>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          非官方整理頁面 · 資料版权归 The Pokémon Company International 所有
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
