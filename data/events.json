@@ -1,23 +1,9 @@
 {
-  "updatedAt": "2026-08-30T10:46:44.135584+00:00",
+  "updatedAt": "2026-08-31T11:55:54.973150+00:00",
   "source": "https://championships.pokemon.com/en-us/events?status=upcoming",
   "api": "https://championships.pokemon.com/api/events.json?locale=en-us",
-  "count": 33,
+  "count": 32,
   "events": [
-    {
-      "name": "2026 寶可夢世界錦標賽 - San Francisco",
-      "nameEn": "2026 Pokémon World Championships - San Francisco",
-      "date": "8 月 28-30",
-      "dateEn": "Aug. 28-30",
-      "type": "世界錦標賽",
-      "typeKey": "world",
-      "location": "San Francisco, CA",
-      "region": "北美",
-      "regionKey": "northamerica",
-      "year": "2026",
-      "url": "https://worlds.pokemon.com/en-us",
-      "streaming": true
-    },
     {
       "name": "2027 Baltimore 寶可夢區域錦標賽",
       "nameEn": "2027 Baltimore Pokémon Regional Championships",
@@ -33,20 +19,6 @@
       "streaming": true
     },
     {
-      "name": "2027 Brisbane 寶可夢區域錦標賽",
-      "nameEn": "2027 Brisbane Pokémon Regional Championships",
-      "date": "9 月 26－27",
-      "dateEn": "Sept. 26–27",
-      "type": "區域／特別錦標賽",
-      "typeKey": "regional",
-      "location": "Brisbane, Australia",
-      "region": "大洋洲",
-      "regionKey": "oceania",
-      "year": "2027",
-      "url": "https://championships.pokemon.com/en-us/events/regionals/2027/brisbane",
-      "streaming": false
-    },
-    {
       "name": "2027 Frankfurt 寶可夢區域錦標賽",
       "nameEn": "2027 Frankfurt Pokémon Regional Championships",
       "date": "9 月 26－27",
@@ -59,6 +31,20 @@
       "year": "2027",
       "url": "https://championships.pokemon.com/en-us/events/regionals/2027/frankfurt",
       "streaming": true
+    },
+    {
+      "name": "2027 Brisbane 寶可夢區域錦標賽",
+      "nameEn": "2027 Brisbane Pokémon Regional Championships",
+      "date": "9 月 26－27",
+      "dateEn": "Sept. 26–27",
+      "type": "區域／特別錦標賽",
+      "typeKey": "regional",
+      "location": "Brisbane, Australia",
+      "region": "大洋洲",
+      "regionKey": "oceania",
+      "year": "2027",
+      "url": "https://championships.pokemon.com/en-us/events/regionals/2027/brisbane",
+      "streaming": false
     },
     {
       "name": "2027 Recife 寶可夢區域錦標賽",
