@@ -1,23 +1,9 @@
 {
-  "updatedAt": "2026-10-04T11:23:07.071973+00:00",
+  "updatedAt": "2026-10-05T12:46:46.115450+00:00",
   "source": "https://championships.pokemon.com/en-us/events?status=upcoming",
   "api": "https://championships.pokemon.com/api/events.json?locale=en-us",
-  "count": 29,
+  "count": 28,
   "events": [
-    {
-      "name": "2027 Recife 寶可夢區域錦標賽",
-      "nameEn": "2027 Recife Pokémon Regional Championships",
-      "date": "10 月 3－4",
-      "dateEn": "Oct. 3–4",
-      "type": "區域／特別錦標賽",
-      "typeKey": "regional",
-      "location": "Recife, Brazil",
-      "region": "拉丁美洲",
-      "regionKey": "latinamerica",
-      "year": "2027",
-      "url": "https://championships.pokemon.com/en-us/events/regionals/2027/recife",
-      "streaming": false
-    },
     {
       "name": "2027 Louisville 寶可夢區域錦標賽",
       "nameEn": "2027 Louisville Pokémon Regional Championships",
