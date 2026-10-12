@@ -1,23 +1,9 @@
 {
-  "updatedAt": "2026-10-11T11:40:10.479182+00:00",
+  "updatedAt": "2026-10-12T13:37:55.642369+00:00",
   "source": "https://championships.pokemon.com/en-us/events?status=upcoming",
   "api": "https://championships.pokemon.com/api/events.json?locale=en-us",
-  "count": 28,
+  "count": 27,
   "events": [
-    {
-      "name": "2027 Louisville 寶可夢區域錦標賽",
-      "nameEn": "2027 Louisville Pokémon Regional Championships",
-      "date": "10 月 9－11",
-      "dateEn": "Oct. 9–11",
-      "type": "區域／特別錦標賽",
-      "typeKey": "regional",
-      "location": "Louisville, KY",
-      "region": "北美",
-      "regionKey": "northamerica",
-      "year": "2027",
-      "url": "https://championships.pokemon.com/en-us/events/regionals/2027/louisville",
-      "streaming": true
-    },
     {
       "name": "2027 Nice 寶可夢區域錦標賽",
       "nameEn": "2027 Nice Pokémon Regional Championships",
