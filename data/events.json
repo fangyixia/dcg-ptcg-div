@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-15T10:25:30.719233+00:00",
+  "updatedAt": "2026-10-16T10:12:39.423033+00:00",
   "source": "https://championships.pokemon.com/en-us/events?status=upcoming",
   "api": "https://championships.pokemon.com/api/events.json?locale=en-us",
-  "count": 27,
+  "count": 29,
   "events": [
     {
       "name": "2027 Nice 寶可夢區域錦標賽",
@@ -173,6 +173,20 @@
       "streaming": false
     },
     {
+      "name": "2027 Seattle 寶可夢區域錦標賽",
+      "nameEn": "2027 Seattle Pokémon Regional Championships",
+      "date": "2 月 5－7",
+      "dateEn": "Feb. 5–7",
+      "type": "區域／特別錦標賽",
+      "typeKey": "regional",
+      "location": null,
+      "region": "北美",
+      "regionKey": "northamerica",
+      "year": "2027",
+      "url": "https://championships.pokemon.com/en-us/events/regionals/2027/seattle/",
+      "streaming": true
+    },
+    {
       "name": "2027 寶可夢歐洲國際錦標賽",
       "nameEn": "2027 Pokémon Europe International Championships",
       "date": "2 月 19－21",
@@ -184,6 +198,20 @@
       "regionKey": "europe",
       "year": "2027",
       "url": "https://championships.pokemon.com/en-us/events/internationals/2027/london",
+      "streaming": true
+    },
+    {
+      "name": "2027 San Antonio 寶可夢區域錦標賽",
+      "nameEn": "2027 San Antonio Pokémon Regional Championships",
+      "date": "2 月 26－28",
+      "dateEn": "Feb. 26–28",
+      "type": "區域／特別錦標賽",
+      "typeKey": "regional",
+      "location": "San Antonio, TX",
+      "region": "北美",
+      "regionKey": "northamerica",
+      "year": "2027",
+      "url": "https://championships.pokemon.com/en-us/events/regionals/2027/san-antonio/",
       "streaming": true
     },
     {
