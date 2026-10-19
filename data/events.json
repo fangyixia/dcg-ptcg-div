@@ -1,23 +1,9 @@
 {
-  "updatedAt": "2026-10-18T09:58:43.271035+00:00",
+  "updatedAt": "2026-10-19T11:20:53.868321+00:00",
   "source": "https://championships.pokemon.com/en-us/events?status=upcoming",
   "api": "https://championships.pokemon.com/api/events.json?locale=en-us",
-  "count": 29,
+  "count": 28,
   "events": [
-    {
-      "name": "2027 Nice 寶可夢區域錦標賽",
-      "nameEn": "2027 Nice Pokémon Regional Championships",
-      "date": "10 月 17－18",
-      "dateEn": "Oct. 17–18",
-      "type": "區域／特別錦標賽",
-      "typeKey": "regional",
-      "location": "Nice, France",
-      "region": "歐洲",
-      "regionKey": "europe",
-      "year": "2027",
-      "url": "https://championships.pokemon.com/en-us/events/regionals/2027/nice",
-      "streaming": true
-    },
     {
       "name": "2027 Puebla 寶可夢區域錦標賽",
       "nameEn": "2027 Puebla Pokémon Regional Championships",
