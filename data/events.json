@@ -1,23 +1,9 @@
 {
-  "updatedAt": "2026-10-25T10:14:03.003657+00:00",
+  "updatedAt": "2026-10-26T11:37:49.320569+00:00",
   "source": "https://championships.pokemon.com/en-us/events?status=upcoming",
   "api": "https://championships.pokemon.com/api/events.json?locale=en-us",
-  "count": 28,
+  "count": 27,
   "events": [
-    {
-      "name": "2027 Puebla 寶可夢區域錦標賽",
-      "nameEn": "2027 Puebla Pokémon Regional Championships",
-      "date": "10 月 24－25",
-      "dateEn": "Oct. 24–25",
-      "type": "區域／特別錦標賽",
-      "typeKey": "regional",
-      "location": "Puebla, Mexico",
-      "region": "拉丁美洲",
-      "regionKey": "latinamerica",
-      "year": "2027",
-      "url": "https://championships.pokemon.com/en-us/events/regionals/2027/puebla",
-      "streaming": true
-    },
     {
       "name": "2027 Gdańsk 寶可夢區域錦標賽",
       "nameEn": "2027 Gdańsk Pokémon Regional Championships",
