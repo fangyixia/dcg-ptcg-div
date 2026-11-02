@@ -1,23 +1,9 @@
 {
-  "updatedAt": "2026-11-01T12:07:28.530416+00:00",
+  "updatedAt": "2026-11-02T13:56:05.004645+00:00",
   "source": "https://championships.pokemon.com/en-us/events?status=upcoming",
   "api": "https://championships.pokemon.com/api/events.json?locale=en-us",
-  "count": 27,
+  "count": 26,
   "events": [
-    {
-      "name": "2027 Gdańsk 寶可夢區域錦標賽",
-      "nameEn": "2027 Gdańsk Pokémon Regional Championships",
-      "date": "10 月 31－11 月 1",
-      "dateEn": "Oct. 31 – Nov. 1",
-      "type": "區域／特別錦標賽",
-      "typeKey": "regional",
-      "location": "Gdańsk, Poland",
-      "region": "歐洲",
-      "regionKey": "europe",
-      "year": "2027",
-      "url": "https://championships.pokemon.com/en-us/events/regionals/2027/gdansk",
-      "streaming": true
-    },
     {
       "name": "2027 Buenos Aires 寶可夢特別錦標賽",
       "nameEn": "2027 Buenos Aires Pokémon Special Championships",
