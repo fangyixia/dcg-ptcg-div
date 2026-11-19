@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-18T14:39:21.612237+00:00",
+  "updatedAt": "2026-11-19T14:45:20.409894+00:00",
   "source": "https://championships.pokemon.com/en-us/events?status=upcoming",
   "api": "https://championships.pokemon.com/api/events.json?locale=en-us",
-  "count": 25,
+  "count": 26,
   "events": [
     {
       "name": "2027 寶可夢拉丁美洲國際錦標賽",
@@ -157,6 +157,20 @@
       "year": "2027",
       "url": "https://championships.pokemon.com/en-us/events/regionals/2027/san-antonio/",
       "streaming": true
+    },
+    {
+      "name": "2027 Johannesburg 寶可夢特別錦標賽",
+      "nameEn": "2027 Johannesburg Pokémon Special Championships",
+      "date": "2 月 27－28",
+      "dateEn": "Feb. 27–28",
+      "type": "區域／特別錦標賽",
+      "typeKey": "regional",
+      "location": "Johannesburg, South Africa",
+      "region": "middleeast",
+      "regionKey": "middleeast",
+      "year": "2027",
+      "url": "https://championships.pokemon.com/en-us/events/regionals/2027/johannesburg",
+      "streaming": false
     },
     {
       "name": "2027 Santiago 寶可夢區域錦標賽",
