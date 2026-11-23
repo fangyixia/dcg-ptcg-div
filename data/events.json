@@ -1,23 +1,9 @@
 {
-  "updatedAt": "2026-11-22T13:39:41.599339+00:00",
+  "updatedAt": "2026-11-23T16:36:10.102183+00:00",
   "source": "https://championships.pokemon.com/en-us/events?status=upcoming",
   "api": "https://championships.pokemon.com/api/events.json?locale=en-us",
-  "count": 26,
+  "count": 25,
   "events": [
-    {
-      "name": "2027 寶可夢拉丁美洲國際錦標賽",
-      "nameEn": "2027 Pokémon Latin America International Championships",
-      "date": "11 月 20－22",
-      "dateEn": "Nov. 20–22",
-      "type": "國際錦標賽",
-      "typeKey": "international",
-      "location": "São Paulo, Brazil",
-      "region": "拉丁美洲",
-      "regionKey": "latinamerica",
-      "year": "2027",
-      "url": "https://championships.pokemon.com/en-us/events/internationals/2027/sao-paulo",
-      "streaming": true
-    },
     {
       "name": "2027 Stuttgart 寶可夢區域錦標賽",
       "nameEn": "2027 Stuttgart Pokémon Regional Championships",
